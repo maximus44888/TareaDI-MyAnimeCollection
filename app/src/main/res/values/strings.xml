@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">My Anime Collection</string>
+    <string name="userInputEditTextHint">Username</string>
+    <string name="passwordInputEditTextHint">Password</string>
+    <string name="forgotPasswordButton">Forgot your password?</string>
+    <string name="loginButton">Log In</string>
+    <string name="signupButton">Sign up</string>
+    <string name="thirdPartySeparator">or</string>
+    <string name="googleLoginButton">Log in with Google</string>
+    <string name="facebookLoginButton">Log in with Facebook</string>
 </resources>

@@ -11,6 +11,7 @@
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/userInputLayout"
         app:layout_constraintStart_toStartOf="@+id/userInputLayout"
@@ -28,13 +29,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="0.15
-">
+        app:layout_constraintVertical_bias="0.15">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username" />
+            android:hint="@string/userInputEditTextHint" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -51,7 +51,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password" />
+            android:hint="@string/passwordInputEditTextHint" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -59,7 +59,7 @@
         style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot your password?"
+        android:text="@string/forgotPasswordButton"
         app:layout_constraintEnd_toEndOf="@id/passwordInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Log In" />
+            android:text="@string/loginButton" />
 
         <Space
             android:layout_width="16dp"
@@ -91,11 +91,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sign up" />
+            android:text="@string/signupButton" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/separator"
+        android:id="@+id/thirdPartySeparator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -117,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="OR" />
+            android:text="@string/thirdPartySeparator" />
 
         <View
             android:layout_width="0dp"
@@ -132,18 +132,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Log in with Google"
+        android:text="@string/googleLoginButton"
         app:icon="@android:drawable/ic_dialog_info"
         app:layout_constraintEnd_toEndOf="@id/userInputLayout"
         app:layout_constraintStart_toStartOf="@id/userInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/separator" />
+        app:layout_constraintTop_toBottomOf="@+id/thirdPartySeparator" />
 
     <Button
         android:id="@+id/facebookLoginButton"
         style="@style/Widget.Material3.Button.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log in with Facebook"
+        android:text="@string/facebookLoginButton"
         app:icon="@android:drawable/ic_dialog_info"
         app:layout_constraintEnd_toEndOf="@+id/googleLoginButton"
         app:layout_constraintStart_toStartOf="@+id/googleLoginButton"
