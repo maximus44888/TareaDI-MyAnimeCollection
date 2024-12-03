@@ -142,7 +142,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/googleLoginButton"
-        app:icon="@android:drawable/ic_dialog_info"
+        app:icon="@drawable/icons8_google_480"
         app:layout_constraintEnd_toEndOf="@id/userInputLayout"
         app:layout_constraintStart_toStartOf="@id/userInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/thirdPartySeparator" />
@@ -153,7 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/facebookLoginButton"
-        app:icon="@android:drawable/ic_dialog_info"
+        app:icon="@drawable/icons8_facebook_500"
         app:layout_constraintEnd_toEndOf="@+id/googleLoginButton"
         app:layout_constraintStart_toStartOf="@+id/googleLoginButton"
         app:layout_constraintTop_toBottomOf="@+id/googleLoginButton" />
