@@ -92,17 +92,49 @@
             android:text="Sign up" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/userInputLayout"
+        app:layout_constraintStart_toStartOf="@id/userInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/loginSignupLayout">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="?attr/colorOutline" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="OR" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="?attr/colorOutline" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/googleLoginButton"
         style="@style/Widget.Material3.Button.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="8dp"
         android:text="Log in with Google"
         app:icon="@android:drawable/ic_dialog_info"
         app:layout_constraintEnd_toEndOf="@id/userInputLayout"
         app:layout_constraintStart_toStartOf="@id/userInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/loginSignupLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
 
     <Button
         android:id="@+id/facebookLoginButton"
