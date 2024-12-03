@@ -24,12 +24,12 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:importantForAccessibility="no"
+                android:src="@mipmap/ic_launcher_round"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/userInputLayout"
                 app:layout_constraintStart_toStartOf="@+id/userInputLayout"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.05"
-                tools:srcCompat="@mipmap/ic_launcher_round" />
+                app:layout_constraintVertical_bias="0.05" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/userInputLayout"
