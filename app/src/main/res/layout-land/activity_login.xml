@@ -44,6 +44,7 @@
                 app:layout_constraintVertical_bias="0.05">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/userInputEditTextHint" />
@@ -58,12 +59,15 @@
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="@id/userInputLayout"
                 app:layout_constraintStart_toStartOf="@id/userInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/userInputLayout">
+                app:layout_constraintTop_toBottomOf="@+id/userInputLayout"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/passwordInputEditTextHint" />
+                    android:hint="@string/passwordInputEditTextHint"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
