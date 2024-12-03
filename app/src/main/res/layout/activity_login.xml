@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="@id/passwordInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginSignupLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,24 +75,28 @@
 
         <Button
             android:id="@+id/loginButton"
-            style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/loginButton" />
-
-        <Space
-            android:layout_width="16dp"
-            android:layout_height="wrap_content" />
+            android:minWidth="150dp"
+            android:text="@string/loginButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/signupButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/signupButton"
-            style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/signupButton" />
-    </LinearLayout>
+            android:minWidth="150dp"
+            android:text="@string/signupButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/loginButton"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/thirdPartySeparator"
