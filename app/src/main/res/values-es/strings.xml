@@ -8,4 +8,5 @@
     <string name="thirdPartySeparator">o</string>
     <string name="googleLoginButton">Iniciar sesión con Google</string>
     <string name="facebookLoginButton">Iniciar sesión con Facebook</string>
+    <string name="cant_be_empty">No puede estar vacio</string>
 </resources>
