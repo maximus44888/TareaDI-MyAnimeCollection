@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="userInputEditTextHint">Usuario</string>
+    <string name="passwordInputEditTextHint">Contraseña</string>
+    <string name="forgotPasswordButton">¿Olvidaste tu contraseña?</string>
+    <string name="loginButton">Iniciar sesión</string>
+    <string name="signupButton">Registrarse</string>
+    <string name="thirdPartySeparator">o</string>
+    <string name="googleLoginButton">Iniciar sesión con Google</string>
+    <string name="facebookLoginButton">Iniciar sesión con Facebook</string>
+</resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Anime Collection</string>
+    <string name="app_name" translatable="false">My Anime Collection</string>
     <string name="userInputEditTextHint">Username</string>
     <string name="passwordInputEditTextHint">Password</string>
     <string name="forgotPasswordButton">Forgot your password?</string>
