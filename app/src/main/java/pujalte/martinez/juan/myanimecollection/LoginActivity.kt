@@ -1,12 +1,13 @@
 package pujalte.martinez.juan.myanimecollection
 
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.doAfterTextChanged
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import pujalte.martinez.juan.myanimecollection.databinding.ActivityLoginBinding
 
@@ -29,23 +30,36 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initialize(savedInstanceState: Bundle?) {
-        binding.userInputLayout.editText?.doAfterTextChanged {
-            if (it.isNullOrBlank()) {
-                binding.userInputLayout.error = getString(R.string.cant_be_empty)
-                binding.userInputLayout.isErrorEnabled = true
-            } else {
-                binding.userInputLayout.error = null
-                binding.userInputLayout.isErrorEnabled = false
+        val snackbar: Snackbar = Snackbar.make(binding.root, "", Snackbar.LENGTH_LONG)
+
+        fun setupTextInputLayoutError(
+            textInputLayout: TextInputLayout,
+            error: String = getString(R.string.cant_be_empty)
+        ) {
+            textInputLayout.editText?.doAfterTextChanged {
+                if (it.isNullOrBlank()) {
+                    textInputLayout.error = error
+                    textInputLayout.isErrorEnabled = true
+                } else {
+                    textInputLayout.error = null
+                    textInputLayout.isErrorEnabled = false
+                }
             }
         }
-        binding.passwordInputLayout.editText?.doAfterTextChanged {
-            if (it.isNullOrBlank()) {
-                binding.passwordInputLayout.error = getString(R.string.cant_be_empty)
-                binding.passwordInputLayout.isErrorEnabled = true
-            } else {
-                binding.passwordInputLayout.error = null
-                binding.passwordInputLayout.isErrorEnabled = false
+
+        fun setupButtonSnackbar(button: Button) {
+            button.setOnClickListener {
+                snackbar.setText(button.text).show()
             }
         }
+
+        setupTextInputLayoutError(binding.userInputLayout)
+        setupTextInputLayoutError(binding.passwordInputLayout)
+
+        setupButtonSnackbar(binding.loginButton)
+        setupButtonSnackbar(binding.signupButton)
+        setupButtonSnackbar(binding.forgotPasswordButton)
+        setupButtonSnackbar(binding.googleLoginButton)
+        setupButtonSnackbar(binding.facebookLoginButton)
     }
 }
