@@ -9,4 +9,7 @@
     <string name="googleLoginButton">Iniciar sesión con Google</string>
     <string name="facebookLoginButton">Iniciar sesión con Facebook</string>
     <string name="cant_be_empty">No puede estar vacio</string>
+    <string name="login_snackbar_text">¿Quieres ir a la acción RV?</string>
+    <string name="snackbar_goto_action_text">Ir</string>
+    <string name="third_party_login_snackbar_text">¿Quieres ir a la acción Contact?</string>
 </resources>

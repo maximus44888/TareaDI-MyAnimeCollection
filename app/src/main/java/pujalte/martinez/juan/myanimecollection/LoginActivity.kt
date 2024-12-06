@@ -1,6 +1,7 @@
 package pujalte.martinez.juan.myanimecollection
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,8 +31,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initialize(savedInstanceState: Bundle?) {
-        val snackbar: Snackbar = Snackbar.make(binding.root, "", Snackbar.LENGTH_LONG)
-
         fun setupTextInputLayoutError(
             textInputLayout: TextInputLayout,
             error: String = getString(R.string.cant_be_empty)
@@ -47,19 +46,47 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        fun setupButtonSnackbar(button: Button) {
-            button.setOnClickListener {
-                snackbar.setText(button.text).show()
-            }
-        }
-
         setupTextInputLayoutError(binding.userInputLayout)
         setupTextInputLayoutError(binding.passwordInputLayout)
 
-        setupButtonSnackbar(binding.loginButton)
+        fun setupButtonSnackbar(
+            button: Button,
+            snackbarText: CharSequence = button.text,
+            duration: Int = Snackbar.LENGTH_SHORT,
+            actionText: CharSequence? = null,
+            listener: View.OnClickListener = View.OnClickListener {}
+        ) {
+            button.setOnClickListener {
+                Snackbar.make(binding.root, snackbarText, duration)
+                    .setAction(actionText, listener).show()
+            }
+        }
+
+        setupButtonSnackbar(
+            binding.loginButton,
+            getString(R.string.login_snackbar_text),
+            Snackbar.LENGTH_INDEFINITE,
+            getString(R.string.snackbar_goto_action_text)
+        ) {
+            //TODO: Intent to RVAction
+        }
         setupButtonSnackbar(binding.signupButton)
         setupButtonSnackbar(binding.forgotPasswordButton)
-        setupButtonSnackbar(binding.googleLoginButton)
-        setupButtonSnackbar(binding.facebookLoginButton)
+        setupButtonSnackbar(
+            binding.googleLoginButton,
+            getString(R.string.third_party_login_snackbar_text),
+            Snackbar.LENGTH_INDEFINITE,
+            getString(R.string.snackbar_goto_action_text)
+        ) {
+            //TODO: Intent to ContactAction
+        }
+        setupButtonSnackbar(
+            binding.facebookLoginButton,
+            getString(R.string.third_party_login_snackbar_text),
+            Snackbar.LENGTH_INDEFINITE,
+            getString(R.string.snackbar_goto_action_text)
+        ) {
+            //TODO: Intent to ContactAction
+        }
     }
 }

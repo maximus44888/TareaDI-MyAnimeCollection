@@ -9,4 +9,7 @@
     <string name="googleLoginButton">Log in with Google</string>
     <string name="facebookLoginButton">Log in with Facebook</string>
     <string name="cant_be_empty">Can\'t be blank</string>
+    <string name="login_snackbar_text">Do you want to go to RV Action?</string>
+    <string name="snackbar_goto_action_text">Go</string>
+    <string name="third_party_login_snackbar_text">Do you want to go to Contact Action?</string>
 </resources>
