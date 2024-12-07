@@ -15,4 +15,5 @@
     <string name="rv_activity_top_app_bar_title">Acción RV</string>
     <string name="item_default_title">Título</string>
     <string name="item_fav_button_content_description">Boton de favorito del item</string>
+    <string name="item_default_description">Descripción</string>
 </resources>

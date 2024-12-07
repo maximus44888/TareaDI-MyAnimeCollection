@@ -13,13 +13,15 @@ import pujalte.martinez.juan.myanimecollection.R
 class ItemAdapter(private val items: List<Item>) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(binding: LayoutItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        private val image: ImageView = binding.itemImage
-        private val title: TextView = binding.itemTitle
-        private val favButton: FloatingActionButton = binding.itemFavButton
+        private val image = binding.itemImage
+        private val title = binding.itemTitle
+        private val description = binding.itemDescription
+        private val favButton = binding.itemFavButton
 
         fun bind(item: Item) {
             image.setImageResource(item.image)
             title.text = item.title
+            description.text = item.description
             favButton.setOnClickListener {
                 item.isFavorite = !item.isFavorite
                 if (item.isFavorite) {

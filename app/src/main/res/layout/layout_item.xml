@@ -11,15 +11,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/item_default_title"
-        app:layout_constraintBottom_toTopOf="@+id/item_fav_button"
+        app:layout_constraintBottom_toTopOf="@+id/itemDescription"
         app:layout_constraintEnd_toStartOf="@id/itemImage"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/item_default_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/itemImage"
+        app:layout_constraintTop_toBottomOf="@id/itemTitle"
+        app:layout_constraintBottom_toTopOf="@id/itemFavButton"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/item_fav_button"
+        android:id="@+id/itemFavButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -29,7 +37,7 @@
         app:layout_constraintEnd_toStartOf="@id/itemImage"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/itemDescription" />
 
     <ImageView
         android:id="@+id/itemImage"

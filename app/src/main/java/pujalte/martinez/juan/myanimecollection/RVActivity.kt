@@ -29,9 +29,18 @@ class RVActivity : AppCompatActivity() {
 
     private fun initialize(saveInstanceState: Bundle?) {
         val items = listOf(
-            Item("Naruto", R.drawable.icons8_google_480),
-            Item("One Piece", R.drawable.icons8_facebook_500),
-            Item("Dragon Ball", R.drawable.ic_launcher_foreground),
+            Item("Naruto", "Primer Anime", R.drawable.icons8_google_480),
+            Item("One Piece", "Segundo Anime", R.drawable.icons8_facebook_500),
+            Item("Bleach", "Tercer Anime", R.drawable.ic_launcher_foreground),
+            Item("Dragon Ball", "Cuarto Anime", R.drawable.icons8_google_480),
+            Item("Fairy Tail", "Quinto Anime", R.drawable.icons8_facebook_500),
+            Item("One Punch Man", "Sexto Anime", R.drawable.ic_launcher_foreground),
+            Item("Hunter X Hunter", "Septimo Anime", R.drawable.icons8_google_480),
+            Item("Tokyo Ghoul", "Octavo Anime", R.drawable.icons8_facebook_500),
+            Item("Death Note", "Noveno Anime", R.drawable.ic_launcher_foreground),
+            Item("Attack On Titan", "Decimo Anime", R.drawable.icons8_google_480),
+            Item("Fullmetal Alchemist", "Onceavo Anime", R.drawable.icons8_facebook_500),
+            Item("Black Clover", "Doceavo Anime", R.drawable.ic_launcher_foreground),
         )
 
         binding.rv.adapter = ItemAdapter(items)
