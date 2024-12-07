@@ -1,5 +1,6 @@
 package pujalte.martinez.juan.myanimecollection
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -68,7 +69,8 @@ class LoginActivity : AppCompatActivity() {
             Snackbar.LENGTH_INDEFINITE,
             getString(R.string.snackbar_goto_action_text)
         ) {
-            //TODO: Intent to RVAction
+            val intent = Intent(this, RVActivity::class.java)
+            startActivity(intent)
         }
         setupButtonSnackbar(binding.signupButton)
         setupButtonSnackbar(binding.forgotPasswordButton)
