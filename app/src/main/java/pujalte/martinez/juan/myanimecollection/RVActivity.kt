@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import pujalte.martinez.juan.myanimecollection.adapters.ItemAdapter
 import pujalte.martinez.juan.myanimecollection.data.Item
 import pujalte.martinez.juan.myanimecollection.databinding.ActivityRvBinding
@@ -43,6 +44,7 @@ class RVActivity : AppCompatActivity() {
             Item("Black Clover", "Doceavo Anime", R.drawable.ic_launcher_foreground),
         )
 
+        binding.rv.layoutManager = LinearLayoutManager(this)
         binding.rv.adapter = ItemAdapter(items)
     }
 }
