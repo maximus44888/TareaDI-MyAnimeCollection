@@ -13,4 +13,6 @@
     <string name="snackbar_goto_action_text">Go</string>
     <string name="third_party_login_snackbar_text">Do you want to go to Contact Action?</string>
     <string name="rv_activity_top_app_bar_title">RV Action</string>
+    <string name="item_default_title">Title</string>
+    <string name="item_fav_button_content_description">Item Favorite Button</string>
 </resources>

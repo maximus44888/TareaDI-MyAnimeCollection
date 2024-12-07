@@ -13,19 +13,19 @@ import pujalte.martinez.juan.myanimecollection.R
 class ItemAdapter(private val items: List<Item>) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(binding: LayoutItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        private val imageView: ImageView = binding.imageView
-        private val textView: TextView = binding.textView
-        private val floatingActionButton: FloatingActionButton = binding.floatingActionButton
+        private val image: ImageView = binding.itemImage
+        private val title: TextView = binding.itemTitle
+        private val favButton: FloatingActionButton = binding.itemFavButton
 
         fun bind(item: Item) {
-            imageView.setImageResource(item.image)
-            textView.text = item.title
-            floatingActionButton.setOnClickListener {
+            image.setImageResource(item.image)
+            title.text = item.title
+            favButton.setOnClickListener {
                 item.isFavorite = !item.isFavorite
                 if (item.isFavorite) {
-                    floatingActionButton.setImageResource(R.drawable.fav_selected)
+                    favButton.setImageResource(R.drawable.fav_selected)
                 } else {
-                    floatingActionButton.setImageResource(R.drawable.fav_unselected)
+                    favButton.setImageResource(R.drawable.fav_unselected)
                 }
             }
         }
