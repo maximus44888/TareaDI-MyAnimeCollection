@@ -32,6 +32,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initialize(savedInstanceState: Bundle?) {
+        fun updateLoginSignupIsEnabled() {
+            val isEnabled =
+                !binding.userInput.text.isNullOrBlank() && !binding.passwordInput.text.isNullOrBlank()
+            binding.loginButton.isEnabled = isEnabled
+            binding.signupButton.isEnabled = isEnabled
+        }
+
         fun setupTextInputLayoutError(
             textInputLayout: TextInputLayout,
             error: String = getString(R.string.cant_be_empty)
@@ -40,9 +47,11 @@ class LoginActivity : AppCompatActivity() {
                 if (it.isNullOrBlank()) {
                     textInputLayout.error = error
                     textInputLayout.isErrorEnabled = true
+                    updateLoginSignupIsEnabled()
                 } else {
                     textInputLayout.error = null
                     textInputLayout.isErrorEnabled = false
+                    updateLoginSignupIsEnabled()
                 }
             }
         }
