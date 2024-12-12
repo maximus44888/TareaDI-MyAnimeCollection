@@ -89,7 +89,8 @@ class LoginActivity : AppCompatActivity() {
             Snackbar.LENGTH_INDEFINITE,
             getString(R.string.snackbar_goto_action_text)
         ) {
-            //TODO: Intent to ContactAction
+            val intent = Intent(this, ContactoActivity::class.java)
+            startActivity(intent)
         }
         setupButtonSnackbar(
             binding.facebookLoginButton,
@@ -97,7 +98,8 @@ class LoginActivity : AppCompatActivity() {
             Snackbar.LENGTH_INDEFINITE,
             getString(R.string.snackbar_goto_action_text)
         ) {
-            //TODO: Intent to ContactAction
+            val intent = Intent(this, ContactoActivity::class.java)
+            startActivity(intent)
         }
     }
 }
