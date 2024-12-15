@@ -6,25 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/imageView"
+        style="?attr/materialIconButtonFilledStyle"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:contentDescription="@null"
+        android:labelFor="@id/editText"
         android:scaleType="centerInside"
+        app:icon="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/editText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@null"
-        android:labelFor="@id/editText"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:importantForAutofill="no"
-        android:inputType=""
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView"

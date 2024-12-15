@@ -5,6 +5,7 @@ import android.text.InputType
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import pujalte.martinez.juan.myanimecollection.databinding.ActivityContactoBinding
@@ -31,7 +32,7 @@ class ContactoActivity : AppCompatActivity() {
     private fun initialize(savedInstanceState: Bundle?) {
 
         fun setupSection(section: LayoutSectionBinding, @DrawableRes resId: Int, contentDescription: String, inputType: Int) {
-            section.imageView.setImageResource(resId)
+            section.imageView.icon = AppCompatResources.getDrawable(this, resId)
             section.imageView.contentDescription = contentDescription
             section.editText.inputType = inputType
         }
