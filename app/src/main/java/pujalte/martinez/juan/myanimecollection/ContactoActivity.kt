@@ -37,10 +37,9 @@ class ContactoActivity : AppCompatActivity() {
             section.editText.inputType = inputType
         }
 
-        setupSection(binding.phone, R.drawable.icons8_google_480, "Phone", InputType.TYPE_CLASS_PHONE)
-        setupSection(binding.mail, R.drawable.icons8_facebook_500, "Mail", InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
-        setupSection(binding.whatsapp, R.drawable.fav_selected, "Whatsapp", InputType.TYPE_CLASS_PHONE)
-        setupSection(binding.location, R.drawable.ic_launcher_foreground, "Location", InputType.TYPE_CLASS_TEXT)
+        setupSection(binding.phone, R.drawable.phone_call, "Phone", InputType.TYPE_CLASS_PHONE)
+        setupSection(binding.mail, R.drawable.email, "Mail", InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
+        setupSection(binding.location, R.drawable.baseline_add_location_24, "Location", InputType.TYPE_CLASS_TEXT)
 
     }
 }

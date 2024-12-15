@@ -16,4 +16,5 @@
     <string name="item_default_title">Title</string>
     <string name="item_fav_button_content_description">Item Favorite Button</string>
     <string name="item_default_description">Description</string>
+    <string name="whatsapp" translatable="false">WhatsApp</string>
 </resources>

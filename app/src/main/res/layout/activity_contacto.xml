@@ -51,24 +51,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="36dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/whatsapp"
-        app:layout_constraintEnd_toEndOf="@id/phone"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/phone"
-        app:layout_constraintTop_toBottomOf="@+id/phone" />
-
-    <include
-        android:id="@+id/whatsapp"
-        layout="@layout/layout_section"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="36dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@+id/location"
         app:layout_constraintEnd_toEndOf="@id/phone"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/phone"
-        app:layout_constraintTop_toBottomOf="@+id/mail" />
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
 
     <include
         android:id="@+id/location"
@@ -80,16 +67,29 @@
         app:layout_constraintEnd_toEndOf="@id/phone"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/phone"
-        app:layout_constraintTop_toBottomOf="@+id/whatsapp" />
+        app:layout_constraintTop_toBottomOf="@+id/mail" />
 
     <ImageView
         android:id="@+id/map"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:importantForAccessibility="no"
         android:src="@drawable/map_preview"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/whatsapp"
         app:layout_constraintEnd_toEndOf="@id/location"
         app:layout_constraintStart_toStartOf="@id/location"
         app:layout_constraintTop_toBottomOf="@id/location" />
+
+    <Button
+        android:id="@+id/whatsapp"
+        style="@style/Widget.Material3.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/whatsapp"
+        app:icon="@drawable/whatsapp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/map"
+        app:layout_constraintStart_toStartOf="@id/map"
+        app:layout_constraintTop_toBottomOf="@id/map" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
