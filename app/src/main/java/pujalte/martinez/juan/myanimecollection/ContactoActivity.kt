@@ -40,9 +40,9 @@ class ContactoActivity : AppCompatActivity() {
 			editText: EditText,
 			permission: String?,
 			intentSupplier: (clickable: EditText) -> Intent,
-			rationalePermission: String = "Some permissions are required for this feature to work", // TODO: Add R string
-			rationaleUnavailability: String = "Feature won't be available", // TODO: Add R string,
-			unableToResolveActivityMessage: String = "No app found", // TODO: Add R string
+			rationalePermission: String = getString(R.string.default_rationale_permission),
+			rationaleUnavailability: String = getString(R.string.default_rationale_unavailability),
+			unableToResolveActivityMessage: String = getString(R.string.default_unable_to_resolve_activity_message),
 		) {
 			fun runIntent() {
 				val intent = intentSupplier(editText)
@@ -95,19 +95,36 @@ class ContactoActivity : AppCompatActivity() {
 		}
 		
 		setupButton(
-			binding.phoneButton, binding.phone, Manifest.permission.CALL_PHONE, { editText ->
-				Intent(Intent.ACTION_CALL, Uri.parse("tel:${editText.text}"))
-			}, "You need to grant call permissions", // TODO: Add R string
-			"You'll be unable to make a call" // TODO: Add R string
+			binding.whatsappButton,
+			binding.phone,
+			null,
+			{ editText ->
+				Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/${editText.text}")).apply {
+					setPackage("com.whatsapp")
+				}
+			},
+			unableToResolveActivityMessage = getString(R.string.whatsapp_unable_to_resolve_activity_message)
 		)
-		setupButton(binding.whatsappButton, binding.phone, null, { editText ->
-			Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/${editText.text}")).apply {
-				setPackage("com.whatsapp")
-			}
-		})
-		setupButton(binding.emailButton, binding.email, null, { editText ->
-			Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:${editText.text}"))
-		})
+		setupButton(
+			binding.phoneButton,
+			binding.phone,
+			Manifest.permission.CALL_PHONE,
+			{ editText ->
+				Intent(Intent.ACTION_CALL, Uri.parse("tel:${editText.text}"))
+			},
+			getString(R.string.phone_rationale_permission),
+			getString(R.string.phone_rationale_unavailability),
+			getString(R.string.phone_unable_to_resolve_activity_message)
+		)
+		setupButton(
+			binding.emailButton,
+			binding.email,
+			null,
+			{ editText ->
+				Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:${editText.text}"))
+			},
+			unableToResolveActivityMessage = getString(R.string.email_unable_to_resolve_activity_message)
+		)
 		setupButton(
 			binding.locationButton,
 			binding.location,
@@ -115,14 +132,20 @@ class ContactoActivity : AppCompatActivity() {
 			{ editText ->
 				Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=${editText.text}"))
 			},
-			"You need to grant location permissions", // TODO: Add R string
-			"You'll be unable to view the map" // TODO: Add R string
+			getString(R.string.location_rationale_permission),
+			getString(R.string.location_rationale_unavailability),
+			getString(R.string.location_unable_to_resolve_activity_message)
 		)
 		setupButton(
-			binding.map, binding.location, Manifest.permission.ACCESS_COARSE_LOCATION, { editText ->
+			binding.map,
+			binding.location,
+			Manifest.permission.ACCESS_COARSE_LOCATION,
+			{ editText ->
 				Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=${editText.text}"))
-			}, "You need to grant location permissions", // TODO: Add R string
-			"You'll be unable to view the map" // TODO: Add R string
+			},
+			getString(R.string.location_rationale_permission),
+			getString(R.string.location_rationale_unavailability),
+			getString(R.string.location_unable_to_resolve_activity_message)
 		)
 	}
 }

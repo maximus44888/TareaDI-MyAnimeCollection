@@ -17,4 +17,18 @@
     <string name="item_fav_button_content_description">Item Favorite Button</string>
     <string name="item_default_description">Description</string>
     <string name="whatsapp" translatable="false">WhatsApp</string>
+    <string name="company_phone" translatable="false">968 32 13 01</string>
+    <string name="company_email" translatable="false">30019702@murciaeduca.es</string>
+    <string name="company_location" translatable="false">C. Carlos III, 3, 30201 Cartagena, Murcia</string>
+    <string name="default_rationale_permission">Necessary permissions have been denied and thus this functionality is unavailable</string>
+    <string name="default_rationale_unavailability">Feature won\'t be available since you\'ve denied the permissions</string>
+    <string name="default_unable_to_resolve_activity_message">Unable to find an app that can handle this functionality</string>
+    <string name="whatsapp_unable_to_resolve_activity_message">Unable to find WhatsApp app. Consider installing it</string>
+    <string name="phone_rationale_permission">To call, the app needs call permissions</string>
+    <string name="phone_rationale_unavailability">You\'ll be unable to make calls since you\'ve denied the call permissions</string>
+    <string name="phone_unable_to_resolve_activity_message">Unable to find an app that can call</string>
+    <string name="email_unable_to_resolve_activity_message">Unable to find an app that can send an email</string>
+    <string name="location_rationale_permission">To view the map, the app needs coarse location permissions</string>
+    <string name="location_rationale_unavailability">You\'ll be unable to view the map since you\'ve denied the coarse location permissions</string>
+    <string name="location_unable_to_resolve_activity_message">Unable to find an app that can view maps</string>
 </resources>
