@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.MyAnimeCollection" parent="Base.Theme.MyAnimeCollection" />
+
+    <style name="Theme.MyAnimeCollection.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">?attr/backgroundColor</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.MyAnimeCollection</item>
+    </style>
 </resources>
