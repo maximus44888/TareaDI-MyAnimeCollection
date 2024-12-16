@@ -2,6 +2,8 @@ package pujalte.martinez.juan.myanimecollection
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -22,7 +24,14 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen()
+
+        val splashScreen = installSplashScreen()
+        var keepOnScreenCondition = true
+        splashScreen.setKeepOnScreenCondition { keepOnScreenCondition }
+        Handler(Looper.getMainLooper()).postDelayed({
+            keepOnScreenCondition = false
+        }, 3000)
+
         enableEdgeToEdge()
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -42,8 +51,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         fun setupTextInputLayoutError(
-            textInputLayout: TextInputLayout,
-            error: String = getString(R.string.cant_be_empty)
+            textInputLayout: TextInputLayout, error: String = getString(R.string.cant_be_empty)
         ) {
             textInputLayout.editText?.doAfterTextChanged {
                 if (it.isNullOrBlank()) {
@@ -69,8 +77,8 @@ class LoginActivity : AppCompatActivity() {
             listener: View.OnClickListener = View.OnClickListener {}
         ) {
             button.setOnClickListener {
-                Snackbar.make(binding.root, snackbarText, duration)
-                    .setAction(actionText, listener).show()
+                Snackbar.make(binding.root, snackbarText, duration).setAction(actionText, listener)
+                    .show()
             }
         }
 
