@@ -37,7 +37,7 @@ class ContactoActivity : AppCompatActivity() {
 	}
 	
 	private fun initialize(savedInstanceState: Bundle?) {
-		fun setupButton(
+		fun setupClickableToIntentWithPermissions(
 			clickable: View,
 			editText: EditText,
 			permission: String?,
@@ -96,7 +96,7 @@ class ContactoActivity : AppCompatActivity() {
 			clickable.setOnClickListener(onClickListener)
 		}
 		
-		setupButton(
+		setupClickableToIntentWithPermissions(
 			binding.whatsappButton,
 			binding.phone,
 			null,
@@ -107,7 +107,7 @@ class ContactoActivity : AppCompatActivity() {
 			},
 			unableToResolveActivityMessage = getString(R.string.whatsapp_unable_to_resolve_activity_message)
 		)
-		setupButton(
+		setupClickableToIntentWithPermissions(
 			binding.phoneButton,
 			binding.phone,
 			Manifest.permission.CALL_PHONE,
@@ -118,7 +118,7 @@ class ContactoActivity : AppCompatActivity() {
 			getString(R.string.phone_rationale_unavailability),
 			getString(R.string.phone_unable_to_resolve_activity_message)
 		)
-		setupButton(
+		setupClickableToIntentWithPermissions(
 			binding.emailButton,
 			binding.email,
 			null,
@@ -127,7 +127,7 @@ class ContactoActivity : AppCompatActivity() {
 			},
 			unableToResolveActivityMessage = getString(R.string.email_unable_to_resolve_activity_message)
 		)
-		setupButton(
+		setupClickableToIntentWithPermissions(
 			binding.locationButton,
 			binding.location,
 			Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -138,7 +138,7 @@ class ContactoActivity : AppCompatActivity() {
 			getString(R.string.location_rationale_unavailability),
 			getString(R.string.location_unable_to_resolve_activity_message)
 		)
-		setupButton(
+		setupClickableToIntentWithPermissions(
 			binding.map,
 			binding.location,
 			Manifest.permission.ACCESS_COARSE_LOCATION,
